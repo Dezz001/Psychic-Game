@@ -25,13 +25,13 @@ function beginLevel() {
 // Displays results on the page via ID
 function HTMLdisplay() {
 	var winsP = document.getElementById("wins");
-	winsP.innerHTML = wins;
+	winsP.innerHTML = "Wins: " + wins;
 
 	var lossesP = document.getElementById("losses");
-	lossesP.innerHTML = losses;
+	lossesP.innerHTML = "Losses :" + losses;
 
 	var guessLeft = document.getElementById("guessLeft");
-	guessLeft.innerHTML = guessesLeft;
+	guessLeft.innerHTML = "Guesses Left: " + guessesLeft;
 
 	var letterGuessed = document.getElementById("guessed");
 	letterGuessed.innerHTML = guessedLetters.join(',');
