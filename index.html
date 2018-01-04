@@ -9,22 +9,22 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- External Asset Stylesheets -->
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<!-- jQuery 1.x -->
-<!-- 	<script
+<!-- jQuery 1.x -->
+	<script
 	  src="https://code.jquery.com/jquery-1.12.4.js"
 	  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
 	  crossorigin="anonymous">
-	</script> -->
+	</script>
 
-	<!-- Latest compiled and minified JavaScript -->
-<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script> -->
+<!-- 	Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
 
-	<!-- Java Code from game.js -->
-	<script src="assets/javascript/game.js"></script>
+
+
 
 </head>
 
@@ -55,279 +55,9 @@
 	</div>
 
 
-<!-- 	<script>
 
-		// Global Variables	
-		var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-		var wins = 0;
-		var losses = 0;
-		var guessesLeft; 
-		var guessedLetters; 
-		var computerAnswer;
-
-		// First time setup to begin the game 
-		beginLevel();
-		HTMLdisplay();
-
-
-		// Sets a new game round
-		function beginLevel() {
-		    computerAnswer = letters[Math.floor(Math.random() * letters.length)];
-		    guessesLeft = 9;
-		    guessedLetters = [];
-		}
-
-
-		// Displays results on the page via ID
-		function HTMLdisplay() {
-			var winsP = document.getElementById("wins");
-			winsP.innerHTML = wins;
-
-			var lossesP = document.getElementById("losses");
-			lossesP.innerHTML = losses;
-
-			var guessLeft = document.getElementById("guessLeft");
-			guessLeft.innerHTML = guessesLeft;
-
-			var letterGuessed = document.getElementById("guessed");
-			letterGuessed.innerHTML = guessedLetters.join(',');
-		}
-
-
-		// Once depressed your guess is loged as an event and assigned to a variable
-		document.onkeyup = function(event) {
-		  var myGuess = event.key;
-
-		  // Your guess is compared to the computer's random answer to determine if it's the same and if so it logs your guess as a win
-		  if (myGuess === computerAnswer) {
-		  	wins++;
-		    beginLevel();
-		  } 
-
-		  // Checks to determine if you ran out of guesses and if so it logs your round as a loss
-		  else if (guessesLeft === 1) {
-		  	losses++;
-		    beginLevel();
-		  } 
-
-		  // Everytime you make an incorrect guess this records and calculates your remaining guesses
-		  else {
-			wrongLetter(myGuess);
-			function wrongLetter(letter) {
-			  guessesLeft--;
-			  guessedLetters.push(letter);
-			}
-
-		  }
-
-		  // Updates your newly collected results and display them on the page via Id 
-		  HTMLdisplay();
-		}
-
-	</script> -->
+<!-- 	Java Code from game.js -->
+<script src="assets/javascript/game.js"></script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-<!-- 
-
-<body>
-
-<h1>The Psychic Game</h1>
-
-<h2 id="wins"></h2>
-
-<h2 id="losses"></h2>
-
-<h2 id="guessesH"></h2>
-
-<h2 id="computeranswer"></h2>
-
-
-<script>
-	
-// Global Variables
-
-
-var computeranswer = 0;
-
-var guesses = 9;
-
-var wins = 0;
-
-var losses = 0;
-
-
-
-var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
-
-function computerguess() {
-
-	// Computer Guess
-	var computeranswer = alphabet[Math.floor(Math.random() * alphabet.length)];
-
-	// Testing
-	console.log(computeranswer);
-
-    // Display to HTML
-	var computeranswerH = document.getElementById("computeranswer");
-	computeranswerH.innerHTML = computeranswer;
-
-	// Your Guess
-	document.onkeyup = function(event) {
-	    
-
-
-		var yourguess = event.key;
-
-	    if (yourguess === computeranswer){
-	        wins++;
-	        
-            // Display to HTML
-			var winsH = document.getElementById("wins");
-			winsH.innerHTML = wins;
-
-	        if(wins===10) {
-	        	
-	        	var youwin = "You Won! Game Over!"
-
-	        	// Display to HTML
-	        	var youwinH = document.getElementById("youwin");
-	        	youwinH.innerHTML = youwin;
-	        	break;
-	        }
-
-
-	    }
-
-	    else {
-	        guesses--;
-
-	        // Display to HTML
-	        document.getElementById("guessesH").innerHTML = "Guesses: " + guesses; 
-	      
-
-
-
-
-
-	        if(guesses ===0) {
-	        	losses++;
-		        
-	        	// Display to HTML
-		        var lossesH = document.getElementById("losses");
-		        lossesH.innerHTML = losses;
-
-		        if(losses ===10){
-		        	
-		        	var youlost = "You Lost! Game Over!"
-
-		        	// Display to HTML
-		        	var youlostH = document.getElementById("youlost");
-		        	youlostH.innerHTML = youlost;
-		        	break;
-		        }
-
-	        	
-	        }
-
-
-
-	    }  
-
-	}
-
-}
-
-
-
-
-</script>
-
-
-
-
-
-
-<!-<p>Guess what letter I'm thinking of</p>
-
-Wins: <p id="wins"></p><br>
-
-Losses: <p id="losses"></p><br>
-
-Guesses Left: <p id="guessLeft"></p>
-
-<p>Your Guesses So Far: <p id="guess-so-far"></p></p>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--   <div id="psychicAct">
-    <h1>The Guessing Game</h1>
-    <h3>Wins:
-      <p id="wins"></p>
-    </h3>
-    <h3>Loses:
-      <p id="losses"></p>
-    </h3>
-    <h3>Guess left:
-      <p id="guesses"></p>
-    </h3>
-    <p>Guess what letter I'm thinking of:</p>
-    <p id="yourguess"></p>
-  </div>
-
- -->
-
-
-
-
-
-
-
-<!-- <script>
-	
-    document.getElementById("wins").innerHTML = "Wins: " + wins;
-    document.getElementById("losses").innerHTML = "losses: " + losses;
-    document.getElementById("guesses").innerHTML = "Guesses left: " + guesses;
-
-
-
-</script> -->
-
-
-<!-- <h1>The Psychic Game</h1>
-
-<h2>Wins:</h2>
-
-<h2>Losses:</h2>
-<h2>Guesses Left:</h2>
-<h2>Your Gueeses So Far:</h2>
- -->
-
- -->
-
-
-
-<!-- </body>
-</html> -->
