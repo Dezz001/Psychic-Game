@@ -28,7 +28,7 @@ function HTMLdisplay() {
 	winsP.innerHTML = "Wins: " + wins;
 
 	var lossesP = document.getElementById("losses");
-	lossesP.innerHTML = "Losses :" + losses;
+	lossesP.innerHTML = "Losses: " + losses;
 
 	var guessLeft = document.getElementById("guessLeft");
 	guessLeft.innerHTML = "Guesses Left: " + guessesLeft;
